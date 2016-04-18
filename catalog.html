@@ -48,7 +48,6 @@
         </form>
       </div>
 
-
       <div class="account-menu decoration">
         <a href="#">Вход</a>
         <form action="echo" method="post">
@@ -92,6 +91,130 @@
       <p>8 812 450-25-25</p>
      </div>
    </header>
+
+
+   <!-- main -->
+    <main class="main-content">
+      <h1>Сливочное мороженое</h1>
+
+      <!-- fiters -->
+      <div class="filters">
+        <form action="/echo" method="post">
+          <fieldset class="sort">
+            <legend>Сортировка:</legend>
+            <select class="decoration" name="sort">
+              <option value="popular-first">По популярности</option>
+              <option value="cheap-first">Сначала недорогие</option>
+              <option value="expensive-first">Сначала дорогие</option>
+              <option value="greasiness-first">По жирности</option>
+            </select>
+          </fieldset>
+
+          <fieldset class="sale">
+            <legend>Цена <output>100</output> руб. - <output>500</output> руб.</legend>
+              <div class="decoration">
+                <input class="decoration" name="count1" type="range">
+                <input class="decoration" name="count2" type="range">
+              </div>
+          </fieldset>
+
+          <fieldset class="greasiness">
+            <legend>Жирность:</legend>
+            <div class="decoration">
+              <label for="btn-1"><input type="radio" id="btn-1" name="greasiness" value="0" checked>0%</label>
+              <label for="btn-2"><input type="radio" id="btn-2" name="greasiness" value="<10">до 10%</label>
+              <label for="btn-3"><input type="radio" id="btn-3" name="greasiness" value="<30">до 30%</label>
+              <label for="btn-4"><input type="radio" id="btn-4" name="greasiness" value=">30">выше 30%</label>
+            </div>
+          </fieldset>
+
+          <fieldset class="filler">
+            <legend>Наполнители:</legend>
+            <div class="decoration">
+              <label><input name="filler" type="checkbox" value="chocolate" checked>шоколадные</label>
+              <label><input name="filler" type="checkbox" value="sugar" checked>сахарные присыпки</label>
+              <label><input name="filler" type="checkbox" value="fruits">фрукты</label>
+              <label><input name="filler" type="checkbox" value="syrups">сиропы</label>
+              <label><input name="filler" type="checkbox" value="jams">джемы</label>
+            </div>
+          </fieldset>
+          <input class="decoration" type="submit" value="Применить">
+        </form>
+      </div>
+
+      <!-- items -->
+      <div class="items">
+        <div class="item">
+          <img src="http://placehold.it/150x100" alt="Мороженка">
+          <a href="#">Сливочное с апельсиновым джемом и цитрусовой стружкой</a>
+          <a class="hidden btn" href="#">Быстрый просмотр</a>
+        </div>
+        <div class="item">
+          <img src="http://placehold.it/150x100" alt="Мороженка">
+          <a href="#">Сливочно-кофейное с кусочками шоколада</a>
+          <a class="hidden btn" href="#">Быстрый просмотр</a>
+        </div>
+        <div class="item">
+          <img src="http://placehold.it/150x100" alt="Мороженка">
+          <a href="#">Сливочно-клубничное с присыпкой из белого шоколада</a>
+          <a class="hidden btn" href="#">Быстрый просмотр</a>
+        </div>
+        <div class="item">
+          <img src="http://placehold.it/150x100" alt="Мороженка">
+          <a href="#">Сливочное крем-брюле с карамельной подливкой</a>
+          <a class="hidden btn" href="#">Быстрый просмотр</a>
+        </div>
+        <div class="item">
+          <img src="http://placehold.it/150x100" alt="Мороженка">
+          <a href="#">Сливочное с брусничным джемом</a>
+          <a class="hidden btn" href="#">Быстрый просмотр</a>
+        </div>
+        <div class="item">
+          <img src="http://placehold.it/150x100" alt="Мороженка">
+          <a href="#">Сливочно-черничное с цельными ягодами черники</a>
+          <a class="hidden btn" href="#">Быстрый просмотр</a>
+        </div>
+        <div class="item">
+          <img src="http://placehold.it/150x100" alt="Мороженка">
+          <a href="#">Сливочно-лимонное с карамельной присыпкой</a>
+          <a class="hidden btn" href="#">Быстрый просмотр</a>
+        </div>
+        <div class="item">
+          <img src="http://placehold.it/150x100" alt="Мороженка">
+          <a href="#">Сливочное с шоколадной стружкой</a>
+          <a class="hidden btn" href="#">Быстрый просмотр</a>
+        </div>
+        <div class="item">
+          <img src="http://placehold.it/150x100" alt="Мороженка">
+          <a href="#">Сливочно-ванильное с кусочками шоколада</a>
+          <a class="hidden btn" href="#">Быстрый просмотр</a>
+        </div>
+        <div class="item">
+          <img src="http://placehold.it/150x100" alt="Мороженка">
+          <a href="#">Сливочноe с ментоловым сиропом</a>
+          <a class="hidden btn" href="#">Быстрый просмотр</a>
+        </div>
+        <div class="item">
+          <img src="http://placehold.it/150x100" alt="Мороженка">
+          <a href="#">Сливочное с кусочками черного шоколада</a>
+          <a class="hidden btn" href="#">Быстрый просмотр</a>
+        </div>
+        <div class="item">
+          <img src="http://placehold.it/150x100" alt="Мороженка">
+          <a href="#">Сливочное с мятным сиропом</a>
+          <a class="hidden btn" href="#">Быстрый просмотр</a>
+        </div>
+        <div class="paginator">
+          <a class="prev disabled" href="">Назад</a>
+          <a class="active" href="#">1</a>
+          <a href="#">2</a>
+          <a href="#">3</a>
+          <a href="#">4</a>
+          <a href="#">5</a>
+          <a class="next" href="#">Вперед</a>
+        </div>
+      </div>
+    </main>
 
   </body>
 </html>
