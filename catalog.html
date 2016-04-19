@@ -11,9 +11,9 @@
      <a class="index-logo" href="index.html"><img src="http://placehold.it/150x100" alt="logo"></a>
      <nav class="main-navigation">
       <ul>
-        <li>
+        <li class="active">
           <a href="catalog.html">Каталог</a>
-          <ul class="hidden">
+          <ul class="sub-menu hidden">
             <li>
               <a href="#">Новинки</a>
             </li>
@@ -100,7 +100,7 @@
       <!-- fiters -->
       <div class="filters">
         <form action="/echo" method="post">
-          <fieldset class="sort">
+          <fieldset class="select-filter">
             <legend>Сортировка:</legend>
             <select class="decoration" name="sort">
               <option value="popular-first">По популярности</option>
@@ -110,15 +110,16 @@
             </select>
           </fieldset>
 
-          <fieldset class="sale">
-            <legend>Цена <output>100</output> руб. - <output>500</output> руб.</legend>
-              <div class="decoration">
-                <input class="decoration" name="count1" type="range">
-                <input class="decoration" name="count2" type="range">
+          <fieldset class="range-filter">
+            <legend>Цена <input class="min-price" type="text" value="100"> руб. - <input class="max-price" type="text" Value="500"> руб.</legend>
+              <div class="controls decoration">
+                <div class="scale"><div class="bar"></div></div>
+                <div class="toggle max-toggle"></div>
+                <div class="toggle min-toggle"></div>
               </div>
           </fieldset>
 
-          <fieldset class="greasiness">
+          <fieldset class="radio-filter">
             <legend>Жирность:</legend>
             <div class="decoration">
               <label for="btn-1"><input type="radio" id="btn-1" name="greasiness" value="0" checked>0%</label>
@@ -128,7 +129,7 @@
             </div>
           </fieldset>
 
-          <fieldset class="filler">
+          <fieldset class="chekbox-filter">
             <legend>Наполнители:</legend>
             <div class="decoration">
               <label><input name="filler" type="checkbox" value="chocolate" checked>шоколадные</label>
