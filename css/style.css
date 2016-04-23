@@ -15,6 +15,13 @@ body {
   background-size: 1200px auto;
 }
 
+.container {
+  outline: 2px solid green;
+  margin: 0 auto;
+  padding: 0 27px;
+  width: 1146px;
+}
+
 .clearfix::after {
   content: "";
   display: table;
@@ -33,24 +40,151 @@ h2 {
 }
 
 .main-header {
-  outline: 2px solid green;
   /*min-height: 125px;*/
-  width: 1146px;
-  margin: 0 auto;
-  padding: 0 27px;
   margin-bottom: 20px;
 }
-/*880 80*/
-.main-navigation {
+
+.main-header .main-navigation {
   outline: 2px solid yellow;
   min-height: 80px;
   width: 853px;
   float: left;
 }
 
-.right-content {
+.main-header .right-content {
   outline: 2px solid yellow;
   min-height: 125px;
+  width: 267px;
+  float: right;
+}
+
+.main-content .slider {
+  outline: 2px solid red;
+  min-height: 465px;
+  margin-bottom: 35px;
+}
+
+.actions {
+  outline: 2px solid red;
+  margin-bottom: 40px;
+}
+
+.actions .left {
+  outline: 2px solid yellow;
+  background: rgba(255, 255, 0, 0.5);
+  width: 560px;
+  min-height: 230px;
+  float: left;
+}
+
+.actions .right {
+  outline: 2px solid yellow;
+  background: rgba(255, 255, 0, 0.5);
+  width: 560px;
+  min-height: 230px;
+  float: right;
+}
+/*267 405/335*/
+.items {
+  outline: 2px solid red;
+  margin-bottom: 30px;
+}
+
+.item{
+  outline: 2px solid yellow;
+  background: rgba(255, 255, 0, 0.5);
+  width: 267px;
+  min-height: 335px;
+  float: left;
+  margin-right: 26px;
+}
+
+.item:nth-child(4n){
+  margin-right: 0;
+}
+
+.features {
+  padding: 20px 21px;
+  outline: 2px solid red;
+  /*min-height: 255px;*/
+  margin-bottom: 40px;
+}
+
+.features .title{
+  outline: 2px solid yellow;
+  background: rgba(255, 255, 0, 0.5);
+  min-height: 50px;
+}
+
+.features .feature {
+  outline: 2px solid yellow;
+  background: rgba(255, 255, 0, 0.5);
+  width: 535px;
+  min-height: 90px;
+  float: left;
+  margin-right: 26px;
+  margin-bottom: 0;
+}
+
+.features .feature:nth-child(2n) {
+  margin-right: 0;
+}
+
+.index-content {
+  outline: 2px solid red;
+  margin-bottom: 40px;
+}
+
+.index-content .news {
+  outline: 2px solid yellow;
+  background: rgba(255, 255, 0, 0.5);
+  width: 560px;
+  min-height: 221px;
+  float: left;
+}
+
+.index-content .subscribe {
+  outline: 2px solid yellow;
+  background: rgba(255, 255, 0, 0.5);
+  width: 560px;
+  min-height: 221px;
+  float: right;
+}
+
+.search-map {
+  outline: 2px solid green;
+  min-height: 430px;
+  width: 1200px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.main-footer {
+  outline: 2px solid green;
+  height: 83px;
+}
+
+.social {
+  outline: 2px solid yellow;
+  background: rgba(255, 255, 0, 0.5);
+  min-height: 83px;
+  width: 267px;
+  float: left;
+  margin-right: 26px;
+}
+
+.about-us {
+  outline: 2px solid yellow;
+  background: rgba(255, 255, 0, 0.5);
+  min-height: 83px;
+  width: 560px;
+  float: left;
+}
+
+.copyright {
+  outline: 2px solid yellow;
+  background: rgba(255, 255, 0, 0.5);
+  min-height: 83px;
   width: 267px;
   float: right;
 }
