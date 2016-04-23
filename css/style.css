@@ -1,7 +1,7 @@
 html,
 body {
   min-width: 1200px;
-  min-height: 2416px;
+  min-height: 1650px;
   margin: 0;
   padding: 0;
 }
@@ -12,6 +12,7 @@ body {
   color: white;
   line-height: 22px;
   /*background: #000000 url("../img/gllacy-index-1200.jpg") no-repeat 50% 0px;*/
+  /*background: #000000 url("../img/gllacy-catalog-1200.jpg") no-repeat 50% 0px;*/
   background-size: 1200px auto;
 }
 
@@ -39,6 +40,7 @@ h2 {
   line-height: 60,35px;
 }
 
+/*index*/
 .main-header {
   /*min-height: 125px;*/
   margin-bottom: 20px;
@@ -90,16 +92,17 @@ h2 {
   margin-bottom: 30px;
 }
 
-.item{
+.items .item{
   outline: 2px solid yellow;
   background: rgba(255, 255, 0, 0.5);
   width: 267px;
-  min-height: 335px;
+  min-height: 361px;
   float: left;
   margin-right: 26px;
+  margin-bottom: 30px;
 }
 
-.item:nth-child(4n){
+.items .item:nth-child(4n){
   margin-right: 0;
 }
 
@@ -156,15 +159,14 @@ h2 {
   min-height: 430px;
   width: 1200px;
   margin: 0 auto;
-  margin-bottom: 20px;
 }
 
 .main-footer {
   outline: 2px solid green;
-  height: 83px;
+  padding-top: 22px;
 }
 
-.social {
+.main-footer .social {
   outline: 2px solid yellow;
   background: rgba(255, 255, 0, 0.5);
   min-height: 83px;
@@ -173,7 +175,7 @@ h2 {
   margin-right: 26px;
 }
 
-.about-us {
+.main-footer .about-us {
   outline: 2px solid yellow;
   background: rgba(255, 255, 0, 0.5);
   min-height: 83px;
@@ -181,10 +183,27 @@ h2 {
   float: left;
 }
 
-.copyright {
+.main-footer .copyright {
   outline: 2px solid yellow;
   background: rgba(255, 255, 0, 0.5);
   min-height: 83px;
   width: 267px;
   float: right;
+}
+
+/*catalog*/
+.filters {
+  outline: 2px solid yellow;
+  background: rgba(255, 255, 0, 0.5);
+  min-height: 150px;
+  min-width: 853px;
+  margin-bottom: 40px;
+}
+
+.paginator {
+  outline: 2px solid yellow;
+  background: rgba(255, 255, 0, 0.5);
+  float: right;
+  width: 267px;
+  min-height: 90px;
 }
