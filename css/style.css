@@ -1,8 +1,24 @@
+html,
+body {
+  min-width: 1200px;
+  min-height: 2416px;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: Roboto;
   font-size: 16px;
   color: white;
   line-height: 22px;
+  background: #000000 url("../img/gllacy-index-1200.jpg") no-repeat 50% 0px;
+  background-size: 1200px auto;
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 h1 {
@@ -14,4 +30,27 @@ h1 {
 h2 {
   font-size: 60px;
   line-height: 60,35px;
+}
+
+.main-header {
+  outline: 2px solid green;
+  /*min-height: 125px;*/
+  width: 1146px;
+  margin: 0 auto;
+  padding: 0 27px;
+  margin-bottom: 20px;
+}
+/*880 80*/
+.main-navigation {
+  outline: 2px solid yellow;
+  min-height: 80px;
+  width: 853px;
+  float: left;
+}
+
+.right-content {
+  outline: 2px solid yellow;
+  min-height: 125px;
+  width: 267px;
+  float: right;
 }
