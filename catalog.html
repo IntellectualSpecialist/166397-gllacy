@@ -44,15 +44,16 @@
 
     <div class="info">
       <div class="user-block">
-        <div class="search decoration">
-          <a href="#">Поиск</a>
+
+        <div class="find">
+          <a class="search decoration" href="#">Поиск</a>
           <form action="echo" method="post">
             <input type="search" name="search" placeholder="Что ищем?">
           </form>
         </div>
 
-        <div class="account-menu decoration">
-          <a href="#">Вход</a>
+        <div class="account-menu">
+          <a class="login decoration" href="#">Вход</a>
           <form action="echo" method="post">
             <input type="email" name="email" placeholder="Электронная почта">
             <input type="password" name="password" placeholder="Пароль">
@@ -62,10 +63,8 @@
           </form>
         </div>
 
-        <div class="cart decoration">
-
-          <a href="#">2 товара</a>
-
+        <div class="buy">
+          <a class="cart decoration" href="#"><span class="busket">Корзина: </span><span class="sum">2</span> товара</a>
           <div class="inside">
             <table>
               <tr>
