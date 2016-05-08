@@ -10,6 +10,30 @@ body {
   background-color: #849d8f;
 }
 
+.site-wrapper {
+  min-width: 1200px;
+
+  background-repeat: no-repeat;
+  background-position: top center;
+  transition: background-image 0.5s ease, background-color 0.5s ease;
+}
+
+.site-wrapper:before,
+.site-wrapper:after {
+  content: "";
+
+  visibility: hidden;
+}
+
+.site-wrapper:before,
+.site-wrapper:after {
+  background-image: url("slide-1.png");
+}
+
+.site-wrapper:after {
+  background-image: url("slide-2.png");
+}
+
 .container {
   margin: 0 auto;
   padding: 0 27px;
@@ -42,6 +66,10 @@ a {
 a:hover {
   border-bottom-color: #ffbc9e;
   color: #ffbc9e;
+}
+
+input[type="radio"] {
+  display: none;
 }
 
 input[type="email"],
@@ -84,7 +112,6 @@ input[type="password"]:focus {
 /*header*/
 .main-header {
   padding-top: 10px;
-  margin-bottom: 20px;
 }
 
 .index-logo,
@@ -429,54 +456,65 @@ input[type="password"]:focus {
 /*main*/
 
 /*slider*/
-.main-content .slider {
-  outline: 2px solid red;
-  min-height: 465px;
+.slider {
+  position: relative;
+  text-align: center;
+  padding-top: 270px;
+  /*min-height: 465px;*/
   margin-bottom: 42px;
 }
 
-.slider .title {
-  margin: 0;
-  padding: 0;
-  display: inline-block;
+.slide {
+  display: none;
+}
+
+.slide-title {
+  margin: 0 auto;
+  margin-bottom: 30px;
+  width: 700px;
   font-size: 60px;
-  font-weight: 700;
-  line-height: 60,35px;
+  font-weight: 900;
+  line-height: 60px;
 }
 
 .btn {
   display: inline-block;
   padding: 10px 20px;
-  border-radius: 20px;
-  vertical-align: top;
+
   font-weight: 700;
+  vertical-align: top;
   color: #ffffff;
   text-decoration: none;
-  box-shadow: 0 2px 2px rgba(172, 16, 0, 0.64);
   text-shadow: 0 2px 5px rgba(160, 32, 11, 0.76);
+
   border: none;
   outline: none;
   cursor: pointer;
   text-decoration: none;
-
-  background-image: linear-gradient(to bottom, #f26843, #e74b36);
+  box-shadow: 0 2px 2px rgba(172, 16, 0, 0.64);
+  background: #f26843;
+  background-image: -webkit-linear-gradient(top, #f26843 0%, #e74b36 100%);
+  background-image:    -moz-linear-gradient(top, #f26843 0%, #e74b36 100%);
+  background-image:         linear-gradient(to bottom, #f26843 0%, #e74b36 100%);
+  border-radius: 20px;
 }
 
 .btn:hover {
-  background-image: linear-gradient(to bottom, #f58669, #ec6f5e);
-  box-shadow: 0 2px 2px #ac1000;
   text-decoration: none;
   color: #ffffff;
+  background: #f58669;
+  background-image: -webkit-linear-gradient(top, #f58669 0%, #ec6f5e 100%);
+  background-image:    -moz-linear-gradient(top, #f58669 0%, #ec6f5e 100%);
+  background-image:         linear-gradient(to bottom, #f58669 0%, #ec6f5e 100%);
+  box-shadow: 0 2px 2px #ac1000;
   border: none;
 }
 
 .btn:active {
+  background: -webkit-linear-gradient(top, #d84732 0%, #e1613e 100%);
+  background:    -moz-linear-gradient(top, #d84732 0%, #e1613e 100%);
+  background:         linear-gradient(to bottom, #d84732 0%, #e1613e 100%);
   box-shadow: inset 0 2px 2px #942718;
-}
-
-.slider .first-slide {
-  vertical-align: center;
-  text-align: center;
 }
 
 .slider .btn {
@@ -484,6 +522,56 @@ input[type="password"]:focus {
   line-height: 41px;
   padding: 12px 50px;
   border-radius: 100px;
+}
+
+.slider-controls {
+  position: absolute;
+  bottom: 25px;
+  left: 0;
+  z-index: 20;
+
+  font-size: 0;
+}
+
+.slider-controls label {
+  display: inline-block;
+  height: 18px;
+  width: 18px;
+  margin-right: 8px;
+
+  vertical-align: top;
+
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+#btn-1:checked ~ .site-wrapper #slide1,
+#btn-2:checked ~ .site-wrapper #slide2,
+#btn-3:checked ~ .site-wrapper #slide3 {
+  display: block;
+}
+
+#btn-1:checked ~ .site-wrapper {
+  background-color: #849d8f;
+  background-image: url("../img/ice-cream1.png");
+}
+
+#btn-2:checked ~ .site-wrapper{
+  background-color: #8996a6;
+  background-image: url("../img/ice-cream2.png");
+}
+
+#btn-3:checked ~ .site-wrapper {
+  background-color: #9d8b84;
+  background-image: url("../img/ice-cream3.png");
+}
+
+#btn-1:checked ~ .site-wrapper label[for="btn-1"],
+#btn-2:checked ~ .site-wrapper label[for="btn-2"],
+#btn-3:checked ~ .site-wrapper label[for="btn-3"] {
+  background-color: #ffffff;
 }
 
 /*actions*/
