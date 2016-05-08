@@ -10,12 +10,20 @@ body {
   background-color: #849d8f;
 }
 
+.inner-page {
+  background-image: url("../img/backlight.png");
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+
 .site-wrapper {
   min-width: 1200px;
 
   background-repeat: no-repeat;
   background-position: top center;
-  transition: background-image 0.5s ease, background-color 0.5s ease;
+  -moz-transition: background-image 0.5s ease, background-color 0.5s ease;
+  -webkit-transition: background-image 0.5s ease, background-color 0.5s ease;
+          transition: background-image 0.5s ease, background-color 0.5s ease;
 }
 
 .site-wrapper:before,
@@ -46,14 +54,6 @@ body {
   clear: both;
 }
 
-h1 {
-  padding: 0;
-  margin: 0;
-  font-size: 35px;
-  font-weight: bold;
-  line-height: 41px;
-}
-
 a {
   font-size: 16px;
   line-height: 18px;
@@ -72,6 +72,7 @@ input[type="radio"] {
   display: none;
 }
 
+textarea,
 input[type="email"],
 input[type="text"],
 input[type="search"],
@@ -92,6 +93,7 @@ input[type="password"] {
   border-radius: 5px;
 }
 
+textarea:hover,
 input[type="email"]:hover,
 input[type="text"]:hover,
 input[type="search"]:hover,
@@ -99,6 +101,7 @@ input[type="password"]:hover {
   box-shadow: 0 0 0 2px #c7c6c5;
 }
 
+textarea:focus,
 input[type="email"]:focus,
 input[type="text"]:focus,
 input[type="search"]:focus,
@@ -193,7 +196,7 @@ input[type="password"]:focus {
 .sub-menu {
   position: absolute;
   top: 100%;
-
+  z-index: 10;
   left: -7px;
   display: none;
   width: 143px;
@@ -294,7 +297,7 @@ input[type="password"]:focus {
 }
 
 .decoration {
-  padding: 8px 15px;
+  padding: 8px 16px;
   font-weight: 500;
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 20px;
@@ -373,6 +376,7 @@ input[type="password"]:focus {
 .find form {
   display: none;
   position: absolute;
+  z-index: 10;
   right: 0;
   top: 100%;
   background: #f8f7f4;
@@ -390,6 +394,7 @@ input[type="password"]:focus {
 
 .account-menu form {
   position: absolute;
+  z-index: 10;
   top: 100%;
   right: 0px;
   display: none;
@@ -640,6 +645,7 @@ input[type="password"]:focus {
   margin-bottom: 37px;
 }
 
+/*дрйгой вариант
 .catalog-item::before {
   content:"";
   position: absolute;
@@ -649,8 +655,21 @@ input[type="password"]:focus {
   top: -5px;
   background: rgba(255, 255, 255, 0.2);
   width: 281px;
-  min-height: 405px;
-  /*padding: 0 7px;*/
+  min-height: 125%;
+  border-radius: 5px;
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.4);
+}*/
+
+.catalog-item-overlay {
+  position: absolute;
+  z-index: 2;
+  display: none;
+  left: -7px;
+  top: -5px;
+  background: rgba(255, 255, 255, 0.2);
+  width: 105%;
+  min-height: 125%;
+
   border-radius: 5px;
   box-shadow: 0 20px 20px rgba(0, 0, 0, 0.4);
 }
@@ -659,7 +678,7 @@ input[type="password"]:focus {
   z-index: 10;
 }
 
-.catalog-item:hover::before {
+.catalog-item:hover .catalog-item-overlay{
   display: block;
 }
 
@@ -690,7 +709,7 @@ input[type="password"]:focus {
   line-height: 45px;
   font-weight: 700;
   left: 0px;
-  bottom: 25px;
+  bottom: 10px;
   text-shadow: 0 1px 3px rgba(49, 50, 53, 0.5);
 }
 
@@ -849,10 +868,20 @@ input[type="password"]:focus {
 
 .index-content-right p {
   margin: 0;
-  margin-bottom: 35px;
+  min-height: 101px;
+}
+
+.index-content-right form {
+  position: relative;
+}
+
+.index-content-right input {
+  margin-right: 0;
 }
 
 .index-content-right .btn {
+  position: absolute;
+  right: 0;
   font-size: 18px;
   line-height: 24px;
   padding: 10px 18px;
@@ -883,21 +912,21 @@ input[type="password"]:focus {
   border-radius: 15px;
 }
 
-.search-map p {
+.search-map-contacts p {
   margin: 0;
   margin-bottom: 25px;
   font-size: 14px;
   line-height: 20px;
 }
 
-.search-map span {
+.search-map-contacts span {
   display: block;
   font-size: 18px;
   line-height: 24px;
   font-weight: 700;
 }
 
-.search-map .tel {
+.search-map-contacts .tel {
   display: block;
 }
 
@@ -907,10 +936,6 @@ input[type="password"]:focus {
   padding-left: 28px;
   font-size: 18px;
   line-height: 24px;
-}
-
-.feedback {
-  display: none;
 }
 
 
@@ -971,27 +996,31 @@ input[type="password"]:focus {
 }
 
 .footer-info {
-  /*min-height: 83px;*/
-  width: 346px;
-  float: left;
+  display: inline-block;
   margin-top: 10px;
-  padding-left: 107px;
-  padding-right: 107px;
+  margin-left: 90px;
 }
 
 .footer-info a {
   font-size: 13px;
   line-height: 18px;
-  margin-right: 45px;
   white-space: nowrap;
 }
 
-.footer-info a:first-child {
-  margin-right: 33px;
+.footer-columns {
+  display: inline-block;
 }
 
-.footer-info a:last-child {
-  margin-right: 0;
+.left-column {
+  float: left;
+  padding-left: 22px;
+  max-width: 135px;
+}
+
+.right-column {
+  float: right;
+  margin-left: 5px;
+  max-width: 165px;
 }
 
 .for-providers {
@@ -1035,6 +1064,99 @@ input[type="password"]:focus {
   line-height: 18px;
 }
 
+/*modal*/
+.modal-content {
+  display: none;
+  position: fixed;
+  z-index: 40;
+  top: 120px;
+  left: 50%;
+  width: 430px;
+  margin-left: -239px;
+  padding: 16px 24px;
+  padding-bottom: 25px;
+  background-color: #f8f7f4;
+  color: #323232;
+  border-radius: 10px;
+}
+
+.modal-content-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+
+  width: 17px;
+  height: 17px;
+
+  font-size: 0;
+
+  background-color: transparent;
+  cursor: pointer;
+  border: 0;
+  outline: 0;
+}
+
+.modal-content-close::before,
+.modal-content-close::after {
+  content: "";
+  position: absolute;
+  top: 7px;
+  left: -2px;
+
+  width: 23px;
+  height: 2px;
+
+  background: #060606;
+}
+
+.modal-content-close::before {
+  transform: rotate(45deg);
+}
+
+.modal-content-close::after {
+  transform: rotate(-45deg);
+}
+
+.modal-content-title {
+  margin: 0;
+  margin-bottom: 23px;
+
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 28px;
+}
+
+.modal-content input {
+  padding: 9px 14px;
+  width: 265px;
+  margin-bottom: 20px;
+}
+
+.modal-content textarea {
+  margin-bottom: 20px;
+  width: 396px;
+  resize: none;
+}
+
+.modal-content button[type="submit"] {
+  float: right;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 30;
+
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.2);
+}
+
 /*catalog.html*/
 
 .buy .full-cart {
@@ -1056,6 +1178,7 @@ input[type="password"]:focus {
 .shopping-list {
   position: absolute;
   /*display: inline-block;*/
+  z-index: 10;
   display: none;
   /*width: 490px;*/
   right: 0px;
@@ -1108,15 +1231,271 @@ input[type="password"]:focus {
 }
 
 .breadcrumbs {
-  margin-top: -43px;
+  margin: 0;
+  padding: 0;
+  margin-top: -20px;
+
+  list-style: none;
+}
+
+.breadcrumbs li {
+  position: relative;
+
+  font-size: 14px;
+  line-height: 16px;
+  display: inline;
+  margin-right: 15px;
+}
+
+.breadcrumbs li::after {
+  content: "»";
+  position: absolute;
+  top: 0;
+  right: -8px;
+}
+
+.breadcrumbs a {
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.breadcrumbs .current::after {
+  display: none;
 }
 
 .page-title {
-  margin-bottom: 30px;
+  margin: 0;
+  margin-bottom: 28px;
+  font-size: 35px;
+  font-weight: bold;
+  line-height: 41px;
 }
 
 .filters {
-  margin-bottom: 40px;
+  margin-bottom: 30px;
+
+  font-size: 0;
+}
+
+.filters fieldset,
+.filters button {
+  display: inline-block;
+  margin: 0;
+  margin-right: 15px;
+  padding-left: 0;
+  padding-right: 0;
+
+  vertical-align: top;
+  border: 0;
+
+  font-size: 16px;
+}
+
+.filters select,
+.filters button {
+  color: #ffffff;
+}
+
+.filters legend {
+  font-size: 14px;
+  line-height: 15px;
+  font-weight: 500;
+  margin-left: 20px;
+}
+
+.filters span {
+  box-shadow: 0 0 0 1px #ffffff;
+}
+
+.filters label:hover span {
+  box-shadow: 0 0 0 2px #ffffff;
+}
+
+.filters input:disabled + label {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.select-filter select {
+  padding-right: 10px;
+}
+
+.select-filter select:hover {
+  color: #323232;
+  background-color: #ffffff;
+}
+
+.range-filter {
+  width: 218px;
+}
+
+.range-filter input {
+  width: 25px;
+  padding: 0;
+  margin-left: 4px;
+  margin-right: 4px;
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 15px;
+  font-weight: 500;
+  background: inherit;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.range-filter input:hover {
+  box-shadow: none;
+}
+
+.range-filter input:focus {
+  box-shadow: none;
+}
+
+.range-controls {
+  position: relative;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding: 16px;
+}
+
+.range-controls .scale {
+  height: 4px;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.range-controls .bar {
+  width: 70%;
+  height: 4px;
+  background: #ffffff;
+}
+
+.range-controls .toggle {
+  position: absolute;
+  top: 8px;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  background: #ffffff;
+  border-radius: 50%;
+}
+
+.range-controls .min-toggle {
+  left: 38px;
+}
+
+.range-controls .max-toggle {
+  left: 129px;
+}
+
+.range-controls .toggle:hover {
+  box-shadow: 0 0 0 2px #ffffff;
+}
+
+.radio-filter input[type="radio"] {
+  display: none;
+}
+
+.filter-greasiness {
+  position: relative;
+
+  margin-right: 15px;
+  padding-left: 30px;
+
+  cursor: pointer;
+}
+
+.filter-greasiness:last-child {
+  margin-right: 0;
+}
+
+.radio-filter input[type="radio"] + .filter-greasiness .radio-indicator {
+  position: absolute;
+  top: 1px;
+  left: 0;
+
+  width: 18px;
+  height: 18px;
+
+  border-radius: 50%;
+  background: transparent;
+}
+
+.radio-filter input[type="radio"]:checked + .filter-greasiness .radio-indicator::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+
+  width: 12px;
+  height: 12px;
+
+  border-radius: 50%;
+  background: #ffffff;
+}
+
+.checkbox-filter input[type="checkbox"] {
+  display: none;
+}
+
+.filter-filler {
+  position: relative;
+
+  margin-right: 20px;
+  padding-left: 30px;
+
+  cursor: pointer;
+}
+
+.filter-filler:last-child {
+  margin-right: 0;
+}
+
+.checkbox-filter input[type="checkbox"] + .filter-filler .check-indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 18px;
+  height: 18px;
+
+  border-radius: 3px;
+  background: transparent;
+}
+
+.checkbox-filter input[type="checkbox"]:checked + .filter-filler .check-indicator::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+
+  width: 9px;
+  height: 4px;
+
+  border: 3px solid #ffffff;
+  border-top: 0;
+  border-right: 0;
+
+  transform: rotate(-45deg);
+  background: transparent;
+}
+
+.filters button {
+  box-shadow: inset 0 0 0 2px #ffffff;
+  padding: 8px 29px;
+  margin-top: 20px;
+}
+
+.filters button:hover {
+  background: #ffffff;
+  color: #323232;
+  cursor: pointer;
+}
+
+.filters button:active {
+  background: #eaeaea;
+  box-shadow: inset 0 2px 1px #696969;
+  border: 0;
 }
 
 .catalog-items-container {
@@ -1129,24 +1508,47 @@ input[type="password"]:focus {
   /*max-width: 300px;*/
   text-align: right;
 
-  /*margin-top: 80px;*/
+  margin-bottom: 30px;
 }
 
 .paginator a {
   display: inline-block;
-  padding: 5px 10px;
+  padding: 4px 9px;
   text-align: center;
   margin: 0;
-  /*width: 27px;*/
-  /*height: 22px;*/
   border-radius: 50%;
   border: 0;
-  /*background-color: #ffffff;*/
 }
 
 .paginator a:hover {
   background: rgba(255, 255, 255, 0.2);
   color: #ffffff;
+}
+
+.paginator .next,
+.paginator .prev {
+  width: 8px;
+  height: 8px;
+
+  padding: 0;
+
+  font-size: 0;
+
+
+  border: 2px solid #ffffff;
+  border-top: 0;
+  border-right: 0;
+  border-radius: 0;
+
+  background: transparent;
+}
+
+.paginator .next {
+  transform: rotate(-135deg);
+}
+
+.paginator .prev {
+  transform: rotate(45deg);
 }
 
 .paginator .next:hover,
@@ -1172,37 +1574,6 @@ input[type="password"]:focus {
   cursor: default;
 }
 
-.filters {
-  font-size: 0;
-}
-
-.filters fieldset,
-.filters button {
-  display: inline-block;
-  vertical-align: top;
-  border: 0;
-
-  font-size: 16px;
-}
-
-.filters select,
-.filters button {
-  color: #ffffff;
-}
-
-.filters button {
-  box-shadow: 0 0 0 2px #ffffff;
-  padding: 8px 45px;
-}
-
-.filters button:hover {
-  background: #ffffff;
-  color: #323232;
-  cursor: pointer;
-}
-
-.filters button:active {
-  background: #eaeaea;
-  box-shadow: inset 0 2px 1px #696969;
-  border: 0;
+.main-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
 }

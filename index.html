@@ -161,6 +161,7 @@
             Сливочное с апельсиновым джемом и цитрусовой стружкой
           </a>
           <a class="hidden btn" href="#">Быстрый просмотр</a>
+          <div class="catalog-item-overlay"></div>
         </article>
 
         <article class="catalog-item hits">
@@ -173,6 +174,7 @@
             Сливочно-кофейное с кусочками шоколада
           </a>
           <a class="hidden btn" href="#">Быстрый просмотр</a>
+          <div class="catalog-item-overlay"></div>
         </article>
 
         <article class="catalog-item hits">
@@ -185,6 +187,7 @@
             Сливочно-клубничное с присыпкой из белого шоколада
           </a>
           <a class="hidden btn" href="#">Быстрый просмотр</a>
+          <div class="catalog-item-overlay"></div>
         </article>
 
         <article class="catalog-item hits">
@@ -197,6 +200,7 @@
             Сливочное крем-брюле с карамельной подливкой
           </a>
           <a class="hidden btn" href="#">Быстрый просмотр</a>
+          <div class="catalog-item-overlay"></div>
         </article>
 
       </section>
@@ -275,16 +279,6 @@
         <a class="btn" href="#">Форма обратной связи</a>
       </div>
 
-      <div class="feedback">
-        <div class="title">Мы обязательно вам ответим!</div>
-        <form action="/echo" method="post">
-          <input name="name" type="text" placeholder="Как вас зовут?">
-          <input name="email" type="email" placeholder="Ваша почта для ответа?">
-          <textarea name="message" placeholder="Напишите что-нибудь..."></textarea>
-          <button class="btn" type="submit">Отправить</button>
-        </form>
-      </div>
-
     </div>
 
 
@@ -296,11 +290,15 @@
           <a class="social-btn social-btn-fb" href="#">Фейсбук</a>
           <a class="social-btn social-btn-vk" href="#">Вконтакте</a>
         </div>
-        <div class="footer-info">
-          <a class="for-providers" href="#">Для поставщиков</a>
-          <a href="#">Наши документы</a>
-          <a href="#">О производстве</a>
-          <a href="#">Экологические стандарты</a>
+        <div class="footer-info clearfix">
+          <div class="footer-columns left-column">
+            <a class="for-providers" href="#">Для поставщиков</a>
+            <a href="#">О производстве</a>
+          </div>
+          <div class="footer-columns right-column">
+            <a href="#">Наши документы</a>
+            <a href="#">Экологические стандарты</a>
+          </div>
         </div>
         <div class="footer-copyright">
           <a class="copyright-logo" href="#"><img src="img/logo-html-academy.svg" width="108" height="38" alt="logo"></a>
@@ -310,5 +308,19 @@
 
     </div>
 
+    <div class="modal-content">
+      <button class="modal-content-close" type="button" title="Закрыть">Закрыть</button>
+
+      <div class="modal-content-title">Мы обязательно вам ответим!</div>
+
+      <form action="/echo" method="post">
+        <input name="name" type="text" placeholder="Как вас зовут?">
+        <input name="email" type="email" placeholder="Ваша почта для ответа?">
+        <textarea name="message" placeholder="Напишите что-нибудь..." rows="5"></textarea>
+        <button class="btn" type="submit">Отправить</button>
+      </form>
+
+    </div>
+    <div class="modal-overlay"></div>
   </body>
 </html>
