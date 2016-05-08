@@ -50,6 +50,7 @@
       <div class="header-info">
 
         <div class="user-block">
+
           <div class="find">
             <a class="search decoration" href="#"><!-- Поиск --></a>
             <form action="echo" method="post">
@@ -62,7 +63,7 @@
             <form action="/echo" method="post">
               <input type="email" name="email" placeholder="Электронная почта">
               <input type="password" name="password" placeholder="Пароль">
-              <div class="enter">
+              <div class="enter-block">
                 <button class="btn" type="submit">Войти</button>
                 <a href="#">Забыли пароль?</a>
                 <a href="#">Новая регистрация</a>
@@ -73,12 +74,17 @@
           <div class="buy">
             <a class="cart decoration" href="#">Пусто</a>
           </div>
+
         </div>
 
-        <div class="contact">
-        <p>С 10 до 20, ежедневно</p>
-        <p class="tel">8 812 450-25-25</p>
-      </div>
+        <div class="header-contact">
+          <p>
+            С 10 до 20, ежедневно
+          </p>
+          <p class="tel">
+            8 812 450-25-25
+          </p>
+        </div>
 
       </div>
     </header>
@@ -145,6 +151,7 @@
         </p>
         <a class="btn" href="#">Хочу варенье!</a>
       </div>
+
       <div class="action-right">
         <div class="action-title">Шоколадки даром!</div>
         <p>
@@ -157,53 +164,53 @@
     <!-- items hits -->
     <section class="catalog-items clearfix">
 
-      <div class="catalog-item hits">
-        <div class="preview">
+      <article class="catalog-item hits">
+        <div class="item-preview">
           <img src="img/item1.jpg" width="267" height="267" alt="мороженка">
           <span class="price">310<span class="rouble-icon">&#8381;</span><span class="kg">/кг</span></span>
           <span class="hit">Хит</span>
         </div>
-        <a href="#">
+        <a class="item-title" href="#">
           Сливочное с апельсиновым джемом и цитрусовой стружкой
         </a>
         <a class="hidden btn" href="#">Быстрый просмотр</a>
-      </div>
+      </article>
 
-      <div class="catalog-item hits">
-        <div class="preview">
+      <article class="catalog-item hits">
+        <div class="item-preview">
           <img src="img/item2.jpg" width="267" height="267" alt="мороженка">
           <span class="price">380<span class="rouble-icon">&#8381;</span><span class="kg">/кг</span></span>
           <span class="hit">Хит</span>
         </div>
-        <a href="#">
+        <a class="item-title" href="#">
           Сливочно-кофейное с кусочками шоколада
         </a>
         <a class="hidden btn" href="#">Быстрый просмотр</a>
-      </div>
+      </article>
 
-      <div class="catalog-item hits">
-        <div class="preview">
+      <article class="catalog-item hits">
+        <div class="item-preview">
           <img src="img/item3.jpg" width="267" height="267" alt="мороженка">
           <span class="price">355<span class="rouble-icon">&#8381;</span><span class="kg">/кг</span></span>
           <span class="hit">Хит</span>
         </div>
-        <a href="#">
+        <a class="item-title" href="#">
           Сливочно-клубничное с присыпкой из белого шоколада
         </a>
         <a class="hidden btn" href="#">Быстрый просмотр</a>
-      </div>
+      </article>
 
-      <div class="catalog-item hits">
-        <div class="preview">
+      <article class="catalog-item hits">
+        <div class="item-preview">
           <img src="img/item4.jpg" width="267" height="267" alt="мороженка">
           <span class="price">415<span class="rouble-icon">&#8381;</span><span class="kg">/кг</span></span>
           <span class="hit">Хит</span>
         </div>
-        <a href="#">
+        <a class="item-title" href="#">
           Сливочное крем-брюле с карамельной подливкой
         </a>
         <a class="hidden btn" href="#">Быстрый просмотр</a>
-      </div>
+      </article>
 
     </section>
 
@@ -309,7 +316,7 @@
         <a href="#">Экологические стандарты</a>
       </div>
       <div class="footer-copyright">
-        <a class="copyright-logo" href="#"><img src="img/logo-html-academy.svg" weight="108" height="38" alt="logo"></a>
+        <a class="copyright-logo" href="#"><img src="img/logo-html-academy.svg" width="108" height="38" alt="logo"></a>
         <p>Сделано в <a href="#">HTML Academy</a> © 2016</p>
       </div>
     </footer>
