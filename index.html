@@ -56,27 +56,35 @@
 
           <div class="user-block">
 
-            <div class="find">
+            <div class="user-block-find">
               <a class="search decoration" href="#"><!-- Поиск --></a>
-              <form action="echo" method="post">
-                <input type="search" name="search" placeholder="Что ищем?">
-              </form>
+
+              <div class="hidden-form">
+                <form action="echo" method="post">
+                  <input type="search" name="search" placeholder="Что ищем?">
+                </form>
+              </div>
+
             </div>
 
-            <div class="account-menu">
+            <div class="user-block-account">
               <a class="login decoration" href="#">Вход</a>
-              <form action="/echo" method="post">
-                <input type="email" name="email" placeholder="Электронная почта">
-                <input type="password" name="password" placeholder="Пароль">
-                <div class="enter-block">
-                  <button class="btn" type="submit">Войти</button>
-                  <a href="#">Забыли пароль?</a>
-                  <a href="#">Новая регистрация</a>
-                </div>
-              </form>
+
+              <div class="hidden-form">
+                <form action="/echo" method="post">
+                  <input type="email" name="email" placeholder="Электронная почта">
+                  <input type="password" name="password" placeholder="Пароль">
+                  <div class="enter-block">
+                    <button class="btn" type="submit">Войти</button>
+                    <a href="#">Забыли пароль?</a>
+                    <a href="#">Новая регистрация</a>
+                  </div>
+                </form>
+              </div>
+
             </div>
 
-            <div class="buy">
+            <div class="user-block-buy">
               <a class="cart decoration" href="#">Пусто</a>
             </div>
 
@@ -322,6 +330,81 @@
 
     </div>
     <div class="modal-overlay"></div>
+
+    <script>
+      var link = document.querySelector(".feedback-form");
+      var popup = document.querySelector(".modal-content");
+      var close = popup.querySelector(".modal-content-close");
+
+      var overlay = document.querySelector(".modal-overlay");
+
+      var form = popup.querySelector("form");
+      var username = popup.querySelector("[name=name]");
+      var email = popup.querySelector("[name=email]");
+      var message = popup.querySelector("[name=message]");
+
+      var storage1 = localStorage.getItem("username");
+      var storage2 = localStorage.getItem("email");
+      var storage3 = localStorage.getItem("message");
+
+      link.addEventListener("click", function(event) {
+        event.preventDefault();
+        overlay.classList.add("modal-overlay-show");
+        popup.classList.add("modal-content-show");
+
+        if (storage1) {
+          username.value = storage1;
+          email.focus();
+        } else {
+          username.focus();
+        }
+
+        if (storage2) {
+          email.value = storage2;
+          message.focus();
+        } else {
+          email.focus();
+        }
+
+        if (storage3) {
+          message.value = storage3;
+          message.focus();
+        }
+
+      });
+
+      close.addEventListener("click", function(event) {
+        event.preventDefault();
+        popup.classList.remove("modal-content-show");
+        overlay.classList.remove("modal-overlay-show");
+        popup.classList.remove("modal-error");
+      });
+
+      form.addEventListener("submit", function(event) {
+        if(!username.value || !email.value || !message.value) {
+          event.preventDefault();
+          popup.classList.remove("modal-error");
+          popup.offsetWidth = popup.offsetWidth;
+          popup.classList.add("modal-error");
+        } else {
+          localStorage.setItem("username", username.value);
+          localStorage.setItem("email", email.value);
+          localStorage.setItem("message", message.value);
+        }
+      });
+
+      window.addEventListener("keydown", function(event) {
+        if (event.keyCode === 27) {
+          if (popup.classList.contains("modal-content-show")) {
+            popup.classList.remove("modal-content-show");
+            overlay.classList.remove("modal-overlay-show");
+            popup.classList.remove("modal-error");
+          }
+        }
+      });
+    </script>
+
+    <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=UqDJjnbYBnXyiwa-EBPj4U5nZR708kA6&width=1200&height=430&id=yandex-map&lang=ru_RU&sourceType=constructor&scroll=true"></script>
 
   </body>
 </html>

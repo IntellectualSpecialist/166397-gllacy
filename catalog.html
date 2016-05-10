@@ -48,50 +48,62 @@
 
       <div class="user-block">
 
-        <div class="find">
+        <div class="user-block-find">
           <a class="search decoration" href="#"><!-- Поиск --></a>
-          <form action="echo" method="post">
-            <input type="search" name="search" placeholder="Что ищем?">
-          </form>
+
+          <div class="hidden-form">
+            <form action="echo" method="post">
+              <input type="search" name="search" placeholder="Что ищем?">
+            </form>
+          </div>
+
         </div>
 
-        <div class="account-menu">
+        <div class="user-block-account">
           <a class="login decoration" href="#">Вход</a>
-          <form action="echo" method="post">
-            <input type="email" name="email" placeholder="Электронная почта">
-            <input type="password" name="password" placeholder="Пароль">
-            <div class="enter-block">
+
+          <div class="hidden-form">
+            <form action="/echo" method="post">
+              <input type="email" name="email" placeholder="Электронная почта">
+              <input type="password" name="password" placeholder="Пароль">
+              <div class="enter-block">
                 <button class="btn" type="submit">Войти</button>
                 <a href="#">Забыли пароль?</a>
                 <a href="#">Новая регистрация</a>
               </div>
-          </form>
+            </form>
+          </div>
+
         </div>
 
-        <div class="buy">
+        <div class="user-block-buy">
           <a class="cart full-cart decoration" href="#">2 товара</a>
-          <div class="shopping-list">
-            <table>
-              <tr>
-                <td><img src="img/close.png" width="11" height="11" alt="close"></td>
-                <td><img src="img/item1.jpg" width="33" height="33" alt="Изображение товара"></td>
-                <td>Пломбир с апельсиновым джемом</td>
-                <td>1,5 кг х <span class="value">200 руб.</span></td>
-                <td>300 руб.</td>
-              </tr>
-              <tr>
-                <td><img src="img/close.png" width="11" height="11" alt="close"></td>
-                <td><img src="img/item3.jpg" width="33" height="33" alt="Изображение товара"></td>
-                <td>Клубничный пломбир с присыпкой  из белого шоколада</td>
-                <td>1,5 кг х <span class="value">300 руб.</span></td>
-                <td>450 руб.</td>
-              </tr>
-            </table>
-            <div class="sum">
-              <p>Итого: 750 руб.</p>
-              <a class="btn" href="#">Оформить заказ</a>
+
+          <div class="hidden-form">
+            <div class="shopping-list">
+              <table>
+                <tr>
+                  <td><img src="img/close.png" width="11" height="11" alt="close"></td>
+                  <td><img src="img/item1.jpg" width="33" height="33" alt="Изображение товара"></td>
+                  <td>Пломбир с апельсиновым джемом</td>
+                  <td>1,5 кг х <span class="value">200 руб.</span></td>
+                  <td>300 руб.</td>
+                </tr>
+                <tr>
+                  <td><img src="img/close.png" width="11" height="11" alt="close"></td>
+                  <td><img src="img/item3.jpg" width="33" height="33" alt="Изображение товара"></td>
+                  <td>Клубничный пломбир с присыпкой  из белого шоколада</td>
+                  <td>1,5 кг х <span class="value">300 руб.</span></td>
+                  <td>450 руб.</td>
+                </tr>
+              </table>
+              <div class="sum">
+                <p>Итого: 750 руб.</p>
+                <a class="btn" href="#">Оформить заказ</a>
+              </div>
             </div>
           </div>
+
         </div>
 
       </div>

@@ -66,8 +66,9 @@ a {
 }
 
 a:hover {
-  border-bottom-color: #ffbc9e;
   color: #ffbc9e;
+
+  border-bottom-color: #ffbc9e;
 }
 
 input[type="radio"] {
@@ -83,7 +84,7 @@ input {
   font-size: 16px;
   line-height: 24px;
   font-weight: 700;
-  font-family: ;
+  font-family: "Roboto", "Arial", sans-serif;
   color: #323232;
 
   background-color: #fff;
@@ -228,7 +229,7 @@ input:focus {
 }
 
 .sub-menu li:last-child {
-  padding-top: 4px;
+  padding-bottom: 4px;
 
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
@@ -301,7 +302,7 @@ input:focus {
   vertical-align: top;
 }
 
-.header-info a {
+.header-info .decoration {
   font-size: 14px;
   line-height: 16px;
   font-weight: 500;
@@ -324,7 +325,7 @@ input:focus {
 }
 
 .user-block > div {
-  /*position: relative;*/
+  position: relative;
 
   display: inline-block;
   margin-right: 10px;
@@ -335,19 +336,6 @@ input:focus {
 
 .user-block > div:last-child {
   margin-right: 0;
-}
-
-.user-block .find {
-  position: relative;
-  font-size: 0;
-}
-
-.user-block .account-menu {
-  position: relative;
-}
-
-.user-block .buy {
-  position: relative;
 }
 
 .user-block .search {
@@ -369,7 +357,7 @@ input:focus {
   background: rgba(255, 255, 255, 0.2) url("../img/icon-cart.svg") no-repeat 16px 50%;
 }
 
-.user-block a:hover {
+.user-block .decoration:hover {
   color: #323232;
 
   background-color: #ffffff;
@@ -390,15 +378,19 @@ input:focus {
   background-image: url("../img/icon-cart-hover.svg");
 }
 
-/*.user-block a:hover + form,*/
-/*можно дать класс find-form*/
-.find form {
+.hidden-form {
   position: absolute;
-  z-index: 2;
   right: 0;
   top: 100%;
+  z-index: 2;
 
   display: none;
+  padding-top: 12px;
+}
+
+/*.user-block a:hover + form,*/
+/*можно дать класс find-form*/
+.user-block-find form {
   padding: 20px 15px;
   padding-right: 5px;
 
@@ -407,19 +399,13 @@ input:focus {
   box-shadow: 0 20px 20px rgba(0, 0, 0, 0.4);
 }
 
-.find input {
+.user-block-find input {
   width: 309px;
   padding: 10px 15px;
 }
 
 /*можно дать класс account-menu-form*/
-.account-menu form {
-  position: absolute;
-  z-index: 2;
-  top: 100%;
-  right: 0px;
-
-  display: none;
+.user-block-account form {
   padding: 20px;
 
   background: #f8f7f4;
@@ -427,7 +413,7 @@ input:focus {
   box-shadow: 0 20px 20px rgba(0, 0, 0, 0.4);
 }
 
-.account-menu input {
+.user-block-account input {
   width: 210px;
   margin-bottom: 20px;
   margin-right: 0;
@@ -447,10 +433,9 @@ input:focus {
 .enter-block a {
   display: inline-block;
   margin-right: 0px;
-  margin-top: 4px;
+  margin-top: 2px;
 
   font-size: 13px;
-  line-height: 24px;
   font-weight: 400;
   color: #323232;
 
@@ -462,7 +447,7 @@ input:focus {
   border-bottom-color: #ffbc9e;
 }
 
-.user-block .decoration:hover + * {
+.user-block div:hover .hidden-form {
   display: block;
 }
 
@@ -901,6 +886,7 @@ input:focus {
   float: right;
   padding: 5px;
 
+  background-color: #ffffff;
   background-image: url("../img/mail-pattern.jpg");
   border-radius: 15px;
 }
@@ -1271,7 +1257,7 @@ input:focus {
 }
 
 /*catalog.html*/
-.buy .full-cart {
+.user-block-buy .full-cart {
   padding-right: 16px;
 
   color: #323232;
@@ -1282,7 +1268,7 @@ input:focus {
     #ffffff;
 }
 
-.buy .full-cart:hover {
+.user-block-buy .full-cart:hover {
   background:
     url("../img/icon-cart-hover.svg") no-repeat 16px 50%,
     url("../img/full-cart.svg") no-repeat 20px 49%,
@@ -1290,12 +1276,6 @@ input:focus {
 }
 
 .shopping-list {
-  position: absolute;
-  right: 0px;
-  top: 100%;
-  z-index: 10;
-
-  display: none;
   padding: 20px 17px;
 
   font-size: 13px;
