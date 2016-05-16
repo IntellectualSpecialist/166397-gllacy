@@ -1070,10 +1070,10 @@ textarea:focus + label {
   position: relative;
 
   min-height: 304px;
-  width: 1146px;
+  width: 100%;
   margin: 0 auto;
   margin-bottom: -2px;
-  padding: 62px 27px;
+  padding: 62px 0;
 
   color: #323232;
 
@@ -1083,7 +1083,7 @@ textarea:focus + label {
 
 .search-map-contacts {
   position: relative;
-  right: 0;
+  right: 98px;
   top: 0;
   z-index: 10;
 
@@ -1092,6 +1092,7 @@ textarea:focus + label {
   min-height: 242px;
   padding: 25px;
   padding-top: 28px;
+  padding-bottom: 33px;
 
   background-color: #ffffff;
   bottom: 63px;
