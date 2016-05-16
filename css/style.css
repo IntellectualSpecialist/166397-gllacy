@@ -1083,7 +1083,7 @@ textarea:focus + label {
 
 .search-map-contacts {
   position: relative;
-  right: 98px;
+  right: 0;
   top: 0;
   z-index: 10;
 
