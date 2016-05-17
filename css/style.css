@@ -713,7 +713,7 @@ textarea:focus + label {
   padding-top: 17px;
   padding-bottom: 22px;
 
-  background: #9c1a36 url("../img/raspberries.png") no-repeat;
+  background: #9c1a36 url("../img/raspberries.jpg") no-repeat;
   border-radius: 15px;
   overflow: hidden;
 }
@@ -725,7 +725,7 @@ textarea:focus + label {
   padding-top: 17px;
   padding-bottom: 22px;
 
-  background: #4e3225 url("../img/chocolate.png") no-repeat;
+  background: #4e3225 url("../img/chocolate.jpg") no-repeat;
   border-radius: 15px;
   overflow: hidden;
 }
