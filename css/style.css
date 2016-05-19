@@ -826,12 +826,13 @@ textarea:focus + label {
   overflow: hidden;
 }
 
-.catalog-item-preview::before {
+.hits::before {
   content: "";
 
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 30;
 
   display: block;
   width: 60px;
